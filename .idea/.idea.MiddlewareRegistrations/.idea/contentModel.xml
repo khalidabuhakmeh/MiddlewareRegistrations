@@ -15,9 +15,11 @@
         <e p="HelloMiddlware.cs" t="Include" />
         <e p="Infrastructure" t="Include">
           <e p="MiddlewareAttribute.cs" t="Include" />
+          <e p="MiddlewareRegistrar.cs" t="Include" />
+          <e p="MiddlewareScope.cs" t="Include" />
           <e p="MiddlwareRegistrationExtensions.cs" t="Include" />
-          <e p="MiddlwareScope.cs" t="Include" />
         </e>
+        <e p="NameMiddleware.cs" t="Include" />
         <e p="WorldMiddleware.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">

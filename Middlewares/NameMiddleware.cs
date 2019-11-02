@@ -5,19 +5,26 @@ using MiddlewareRegistrations.Middlewares.Infrastructure;
 
 namespace MiddlewareRegistrations.Middlewares
 {
-    [Middleware(Order = 2)]
-    public class WorldMiddleware : IMiddleware
+    public class NameMiddleware : IMiddleware
     {
-        private readonly ILogger<WorldMiddleware> logger;
+        public class NameRegistrar : MiddlewareRegistrar<NameMiddleware>
+        {
+            public NameRegistrar()
+            {
+                Order = 3;
+            }
+        }
+        
+        private readonly ILogger<NameMiddleware> logger;
 
-        public WorldMiddleware(ILogger<WorldMiddleware> logger)
+        public NameMiddleware(ILogger<NameMiddleware> logger)
         {
             this.logger = logger;
         }
 
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
-            logger.LogInformation("World!");
+            logger.LogInformation("John Wick!");
             await next(context);
         }
     }
